@@ -1,0 +1,86 @@
+/* Remove margins in top*/
+/** {
+    margin: 0 !important;
+    padding: 0 !important;
+  }*/
+.Background {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  justify-content: center;
+}
+.Personal-Inf {
+  /*background-color: rgb(166, 255, 0);*/
+  display: flex;
+  height: 40vh;
+  width: 90vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  /*overflow: hidden;*/
+}
+.Personal-Inf-Text {
+  display: inline-block;
+  flex-direction: column;
+  margin-left: 3%;
+  margin-top: 0%;
+
+  border: 1px solid yellow;
+  display: inline-block;
+
+  align-items: center;
+  justify-content: center;
+}
+.Avatar {
+  /*min-height: 100vh;*/
+  display: inline-block;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  height: 20vh;
+  width: 20vh;
+  color: white;
+}
+.Avatar-Image {
+  border-radius: 50%;
+  height: 20vh;
+  width: 20vh;
+}
+.Bio {
+  /*background-color: red;*/
+
+  display: inline-block;
+  flex-direction: column;
+  width: 100%;
+
+  border: 1px solid red;
+
+  /*line-height: 100%;*/
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: inline-block;
+}
+.Contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: fit-content;
+  height: 150px;
+  border: 1px solid blue;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  font-size: 15px;
+  color: white;
+}
+.Contact-Links {
+  /*border: 1px solid white;*/
+  width: fit-content;
+  margin-bottom: 10px;
+  margin-right: 90px;
+}

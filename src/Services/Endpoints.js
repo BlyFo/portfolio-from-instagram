@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-
-const userName = "notspivak";//"natalyvalencia.v"
+import { instagramUserName } from '../Config/PersonalInfo';
 
 export const GetUsers = async () => {
   try {
@@ -22,7 +20,7 @@ export const GetUserInfo = async () => {
   //https://www.youtube.com/watch?v=hxyp_LkKDdk&ab_channel=HongLy
   //https://www.youtube.com/watch?v=4B5WgTiKIOY&ab_channel=JennyChannel-T%E1%BB%ABDeveloper%C4%91%E1%BA%BFnSeller
   try {
-    const url = `https://www.instagram.com/${userName}/?__a=1`;
+    const url = `https://www.instagram.com/${instagramUserName}/?__a=1`;
     const resGet = await axios.get(url, {
       headers: {
         'Access-Control-Allow-Origin': 'true'

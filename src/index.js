@@ -25,4 +25,10 @@ https://www.instagram.com/natalyvalencia.v/?__a=1
 
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --user-data-dir=%TMP%\temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials
 
+npm i --save react-native-svg # **
+npm i -S @fortawesome/free-regular-svg-icons
+npm i -S @fortawesome/free-solid-svg-icons
+npm i -S @fortawesome/react-fontawesome
+npm i -S @fortawesome/free-brands-svg-icons
+
 */

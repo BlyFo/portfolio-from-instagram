@@ -1,0 +1,14 @@
+.postMedia-Img {
+  display: block;
+  width: 90%;
+  height: 95%;
+  object-fit: contain; /* mantain aspct ratio*/
+  object-position: center; /* focus center of image*/
+}
+.postMedia-Video {
+  display: block;
+  width: 90%;
+  height: 95%;
+  object-fit: contain; /* mantain aspct ratio*/
+  object-position: center; /* focus center of image*/
+}

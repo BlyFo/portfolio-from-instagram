@@ -1,6 +1,19 @@
 import axios from 'axios';
 import { instagramUserName } from '../Config/PersonalInfo';
 
+document.cookie = 'sessionid=7515213976%3AWvUsmarQ06xBGY%3A22';
+const axiosConfig = {
+  withCredentials: true,
+  headers: {
+    'content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'true',
+    "Accept": "/",
+    "Cache-Control": "no-cache",
+    //"Cookie": document.cookie
+  },
+  credentials: "same-origin"
+};
+
 export const GetUsers = async () => {
   try {
     const url = `https://jsonplaceholder.typicode.com/users`;
@@ -21,11 +34,16 @@ export const GetUserInfo = async () => {
   //https://www.youtube.com/watch?v=4B5WgTiKIOY&ab_channel=JennyChannel-T%E1%BB%ABDeveloper%C4%91%E1%BA%BFnSeller
   try {
     const url = `https://www.instagram.com/${instagramUserName}/?__a=1`;
-    const resGet = await axios.get(url, {
+    const resGet = await axios.get(url, axiosConfig)
+    /*{
+      withCredentials: true,
       headers: {
         'Access-Control-Allow-Origin': 'true'
       }
-    })
+    }*/
+    //'cookie': "sessionid=7515213976%3AWvUsmarQ06xBGY%3A22;"
+    //expressApp.use(cors({ credentials: true, origin: "http://localhost:8080" }));
+    //console.log(resGet.data)
     if (resGet.status === 200) {
       const data = await resGet.data
       return data.graphql.user
@@ -33,7 +51,8 @@ export const GetUserInfo = async () => {
       return -1
     }
   } catch (error) {
-    console.log(error)
+    console.log(error + 1)
+
     return -1
   }
 }

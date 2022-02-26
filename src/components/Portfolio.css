@@ -21,8 +21,10 @@
 .Personal-Inf {
   /*background-color: rgb(166, 255, 0);*/
   display: flex;
-  height: 40vh;
+  height: 30vh;
   width: 90vw;
+  min-height: 280px;
+  min-width: 550px;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -35,7 +37,8 @@
   flex-direction: column;
   margin-left: 3%;
   margin-top: 0%;
-  width: 80%;
+  margin-right: 2%;
+  width: 100%;
   height: 95%;
 
   /*border: 1px solid yellow;*/
@@ -52,14 +55,14 @@
   /*justify-content: center;*/
   /*border: 1px solid yellow;*/
   height: 100%;
-  width: 20vh;
+  width: 140px;
   color: white;
   margin-left: 3%;
 }
 .Avatar-Image {
   border-radius: 50%;
-  height: 20vh;
-  width: 20vh;
+  height: 140px;
+  width: 140px;
   margin-top: 20%;
 }
 .Bio {
@@ -77,13 +80,14 @@
   color: white;
 }
 .Bio-Tittle {
-  font-size: 2.2vh;
+  font-size: 19px;
   margin: 0%;
 }
 .Bio-Text {
   white-space: pre-wrap;
-  font-size: 1.7vh;
-  margin-left: 2vh;
+  height: 100%;
+  font-size: 15px;
+  margin-left: 16px;
   margin-top: 5px;
 }
 .Contact {
@@ -99,4 +103,61 @@
 
   font-size: 15px;
   color: white;
+}
+.FeatureWork {
+  display: flex;
+  height: 180px;
+  width: 100%; /*
+  min-height: 280px;
+  min-width: 550px;*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /*border: 1px solid green;*/
+  margin-top: 20px;
+}
+.FeatureWork-Tittle {
+  font-size: 19px;
+  margin: 0%;
+  color: white;
+  /*border: 1px solid white;*/
+}
+.FeatureWork-Content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid white;*/
+}
+.Work {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 180px;
+  width: 100%; /*
+  min-height: 280px;
+  min-width: 550px;*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid green;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Instagram-Post-Button {
+  margin: 10px;
+  background-color: #282c34;
+  color: #282c34;
+  border: 0px solid #4caf50;
+}
+.Instagram-Post {
+  /* 1.33 aspect ratio*/
+  height: 300px;
+  width: 300px;
+  margin: 0px;
+  border: 1px solid white;
+  transition-duration: 0.4s;
+}
+.Instagram-Post:hover {
+  opacity: 0.5;
 }

@@ -61,6 +61,7 @@ export const GetVideo = async (url) => {
     const resGet = await axios.get(url, axiosConfig)
     if (resGet.status === 200) {
       const data = await resGet.request.responseURL
+      console.log(data)
       return data;
     } else {
       return -1

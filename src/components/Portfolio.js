@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { contactInformation, customBio, customName } from '../Config/PersonalInfo';
+import { showSinglePosts, showSydeCardsPosts } from '../Config/Posts';
 import { GetUserInfo } from '../Services/Endpoints';
 import ModalShowPostContent from './ModalShowPostContent';
 import Icons from './Icons';
@@ -33,33 +34,60 @@ function Portfolio(props) {
     Salem();
   }, [])
 
-  function SetModalContent(post) {
+  function DisplayPosts() {
+    if (!done) return null;
 
-    setPostType(post.__typename);
+    return (
+      posts.edges.map((post, index) => {
+        let showPost = false;
+        let postMedia = ''
+        switch (post.node.__typename) {
+          case "GraphSidecar":
+            if (showSydeCardsPosts['image'] && showSydeCardsPosts['video']) {
+              showPost = true;
+              postMedia = post.node.edge_sidecar_to_children.edges
+            }
+            break;
 
-    //sidecards => "GraphSidecar"
-    //sinble video => "GraphVideo"
-    //single picture => "GraphImage"
+          case "GraphImage":
+            if (showSinglePosts['image']) {
+              showPost = true;
+              postMedia = post.node
+            }
+            break;
 
-    switch (post.__typename) {
-      case "GraphSidecar":
-        setPostContent(post.edge_sidecar_to_children.edges);
-        break;
+          case "GraphVideo":
+            if (showSinglePosts['video']) {
+              showPost = true;
+              postMedia = post.node
+            }
+            break;
 
-      case "GraphImage":
-        setPostContent(post);
-        break;
-      case "GraphVideo":
-        setPostContent(post);
-        break;
-
-      default:
-        console.log("Unknow Post Type: " + post.__typename);
-        break;
-    }
-
-    SetShowModalPictures(true);
-  }
+          default:
+            console.log("Unknow Post Type: " + post.node.__typename);
+            break;
+        }
+        if (showPost) {
+          return (
+            <button className='Instagram-Post-Button'
+              onClick={() => {
+                setPostType(post.node.__typename);
+                setPostContent(postMedia);
+                SetShowModalPictures(true);
+              }}
+              key={"post " + index}
+            >
+              <img className='Instagram-Post'
+                crossOrigin="anonymous"
+                src={post.node.thumbnail_src}
+                alt="new"
+              />
+            </button>
+          );
+        }
+      })
+    )
+  };
 
   return (
     <div className='Background'>
@@ -94,29 +122,17 @@ function Portfolio(props) {
           </div>
         </div>
         <div className='Work'>
-          {(done) ? (
-            posts.edges.map((post, index) => {
-              return (
-                <button className='Instagram-Post-Button'
-                  onClick={() => SetModalContent(post.node)}
-                  key={"post " + index}
-                >
-                  <img className='Instagram-Post'
-                    crossOrigin="anonymous"
-                    src={post.node.thumbnail_src}
-                    alt="new"
-                  />
-                </button>
-              )
-            })) : null}
+          <DisplayPosts />
         </div>
       </div>
-      <ModalShowPostContent
+      {/* if the component <ModalShowPostContent ... /> is rendered from the start it ocasionate problems with the UseEffect in the component*/}
+      {/* it only needs to be render when necesary (not using css with display: none;) */}
+      {(showModalPictures) ? <ModalShowPostContent
         show={showModalPictures}
         close={() => SetShowModalPictures()}
         postContent={postContent}
         postType={postType}
-      />
+      /> : null}
     </div>
   );
 }

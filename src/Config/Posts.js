@@ -1,7 +1,7 @@
 
 export const showSinglePosts = {
     'image': true, //show single video posts.
-    'video': false, //show single picture posts.
+    'video': true, //show single picture posts.
 };
 export const showSydeCardsPosts = {
     // if both are deactivate then it dosen't show sydecards post at all

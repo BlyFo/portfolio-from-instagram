@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetVideo } from '../Services/Endpoints';
 import './DisplayMediaPostByType.css'
 
 function DisplayMediaPostByType({ media, filter }) {
@@ -20,10 +21,11 @@ function DisplayMediaPostByType({ media, filter }) {
     case "GraphVideo":
       //incase filter is not send as a aparameter
       if (filter === undefined || filter['video']) {
-        console.log("entro")
+        let videoSource = GetVideo(media.video_url);
         content = (
           <video crossOrigin="anonymous" controls autoPlay>
-            <source src={media.video_url} />
+            {console.log(videoSource)}
+            <source src={videoSource} />
             This browser doesn't support video tag.
           </video>
         );

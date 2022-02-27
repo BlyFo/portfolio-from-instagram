@@ -56,6 +56,20 @@ export const GetUserInfo = async () => {
     return -1
   }
 }
+export const GetVideo = async (url) => {
+  try {
+    const resGet = await axios.get(url, axiosConfig)
+    if (resGet.status === 200) {
+      const data = await resGet.request.responseURL
+      return data;
+    } else {
+      return -1
+    }
+  } catch (error) {
+    console.log(error + 1)
+    return -1
+  }
+}
 export const GetUserImage = async () => {
   try {
     const url = 'https://instagram.fcor14-1.fna.fbcdn.net/v/t51.2885-19/273901486_920640525309116_9132684757327553359_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fcor14-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=NnD2D1V-604AX9TO8Y_&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT_YmBh22UrMnwkH1jJ0mqHDkLyS6QIoClnbF_ldVsJOzw&oe=6218DA93&_nc_sid=7bff83';

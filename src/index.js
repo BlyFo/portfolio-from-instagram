@@ -4,14 +4,16 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Portfolio from './components/Portfolio'
-import Test from './components/Test'
+//import Test from './components/Test'
 
 ReactDOM.render(
   <React.StrictMode>
     {
       //<Test />
     }
-    <Portfolio />
+    {
+      <Portfolio />
+    }
   </React.StrictMode>,
   document.getElementById('root')
 );

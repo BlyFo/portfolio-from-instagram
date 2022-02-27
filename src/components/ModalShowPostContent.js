@@ -21,8 +21,6 @@ function ModalShowPostContent({ close, show, postContent, postType }) {
         if (newIndex < 0) newIndex = slides.children.length - 1;
         if (newIndex >= slides.children.length) newIndex = 0;
 
-        console.log(1, slides.children.length)
-
         slides.children[newIndex].dataset.active = true;
         delete activeSlide.dataset.active;
       })
@@ -85,7 +83,7 @@ function ModalShowPostContent({ close, show, postContent, postType }) {
         <button className="carousel-button prev" data-carousel-button="prev">&#8656;</button>
         <button className="carousel-button next" data-carousel-button="next">&#8658;</button>
         <ul data-slides>
-          {ShowCarouselPosts()}
+          <ShowCarouselPosts />
         </ul>
       </div>
     );
@@ -96,15 +94,15 @@ function ModalShowPostContent({ close, show, postContent, postType }) {
     if (postType !== false)
       switch (postType) {
         case "GraphSidecar":
-          returnPost = Carousel();
+          returnPost = <Carousel />;
           break;
 
         case "GraphImage":
-          returnPost = <DisplayMediaPostByType media={postContent} filter={showSinglePosts} />
+          returnPost = <DisplayMediaPostByType media={postContent} />
           break;
 
         case "GraphVideo":
-          returnPost = <DisplayMediaPostByType media={postContent} filter={showSinglePosts} />
+          returnPost = <DisplayMediaPostByType media={postContent} />
           break;
 
         default:
@@ -117,7 +115,7 @@ function ModalShowPostContent({ close, show, postContent, postType }) {
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
-        {ShowPostByType()}
+        <ShowPostByType />
       </section>
       <button className='modal-Close' onClick={() => close(false)}>X</button>
     </div>

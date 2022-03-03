@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GetVideo } from '../Services/Endpoints';
 import './DisplayMediaPostByType.css'
+import './Loader.css'
 
 function DisplayMediaPostByType({ media, filter }) {
   let content = null;
@@ -40,21 +41,14 @@ function DisplayMediaPostByType({ media, filter }) {
     case "GraphVideo":
       //incase filter is not send as a aparameter
       if (filter === undefined || filter['video']) {
-        //videoSource = GetVideo(media.video_url);
-        //setVideo(videoSource);
-        //console.log(videoSource)
         content = (asyncContent !== '') ? (
-          <video crossOrigin="anonymous" controls autoPlay>
+          //when the video is loaded
+          <video className='postMedia-Video' crossOrigin="anonymous" controls autoPlay>
             <source src={asyncContent} type="video/mp4" />
             This browser doesn't support video tag.
           </video>
-        ) : (
-          <div style={{ border: '1px solid red' }}>
-            <video crossOrigin="anonymous" controls autoPlay>
-              This browser doesn't support video tag.
-            </video>
-          </div>
-
+        ) : ( //while loading the video url
+          <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         );
       }
       break;

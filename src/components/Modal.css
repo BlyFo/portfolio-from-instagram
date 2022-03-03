@@ -29,6 +29,12 @@
   font-size: 26px;
   margin-top: 10px;
   margin-left: -10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.modal-Close:hover,
+.modal-Close:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .modal-main {
   position: fixed;

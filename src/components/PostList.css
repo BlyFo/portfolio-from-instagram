@@ -1,0 +1,30 @@
+.Work {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 180px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid green;*/
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.Instagram-Post-Button {
+  margin: 10px;
+  background-color: #282c34;
+  color: #282c34;
+  border: 0px solid #4caf50;
+}
+.Instagram-Post {
+  /* 1.33 aspect ratio*/
+  height: 300px;
+  width: 300px;
+  margin: 0px;
+  border: 0.5px solid #003459;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+}
+.Instagram-Post:hover {
+  opacity: 0.5;
+}

@@ -1,13 +1,9 @@
 .Contact-Icons-Container {
   display: flex;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: cadetblue;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  margin-right: 40px;
+  margin-bottom: 0px;
+  margin-right: 35px;
 }
 .Contact-Icons:link,
 .Contact-Icons:visited {
@@ -15,7 +11,6 @@
   align-items: center;
   text-decoration: none;
   justify-content: center;
-  color: white;
   height: 100%;
   width: 100%;
 }

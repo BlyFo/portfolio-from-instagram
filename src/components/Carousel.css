@@ -20,21 +20,6 @@
   align-items: center;
   justify-content: center;
 }
-/*
-.slide > img {
-  display: block;
-  width: 90%;
-  height: 95%;
-  object-fit: contain; 
-  object-position: center;
-}*/
-.juanito {
-  position: absolute;
-  color: aliceblue;
-  top: 0%;
-  right: 0%;
-  font-size: 40px;
-}
 
 .slide[data-active] {
   opacity: 1;

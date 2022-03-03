@@ -2,6 +2,9 @@
 // https://www.instagram.com/robertdowneyjr/ => robertdowneyjr
 export const instagramUserName = "notspivak"; //"nsfwandlewd"; //"natalyvalencia.v"; 
 
+//https://dev.to/praneetloke/roll-your-own-instagram-gallery-in-5-mins-3fjf
+export const instagramUserQuery_hash = '8c2a529969ee035a5063f2fc8602a0fd';//'8c2a529969ee035a5063f2fc8602a0fd';
+
 //overrride the instagram username and bio.
 export const customName = '';
 

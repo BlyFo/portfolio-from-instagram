@@ -25,7 +25,7 @@ Instagram changes its API regulary so i dont know for how low this is going to l
 
 ## Pictures
 
-![alt text](src\Images\ScreenShoot_1.png)
-![alt text](src\Images\ScreenShoot_2.png)
-![alt text](src\Images\ScreenShoot_3.png)
-![alt text](src\Images\ScreenShoot_4.png)
+![image1](src/Images/ScreenShoot_1.png)
+![image2](src/Images/ScreenShoot_2.png)
+![image3](src/Images/ScreenShoot_3.png)
+![image4](src/Images/ScreenShoot_4.png)
